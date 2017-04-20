@@ -15,7 +15,7 @@ def stock_picker(prices)
   [ prices.index(price_min) , prices.index(price_max)]
 end
 
-p stock_picker([1,2,3])
 
-p stock_picker([4,1,2,3])
-p stock_picker([17,3,6,9,15,8,6,1,10])
+stock_picker([1,2,3]) #[0, 2]
+stock_picker([4,1,2,3]) #[1,3]
+stock_picker([17,3,6,9,15,8,6,1,10]) #[1,4]
