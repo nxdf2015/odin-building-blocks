@@ -15,13 +15,13 @@ def substring_word(word, dict = [] ,acc = {})
 end
 
 def substrings(text ,dict = [] ,acc = {})
-  text.downcase.split(/\s+/).map {|word|
-  acc = substring_word(word,dict,acc)
+  text.downcase.split(/\s+/).each {|word|
+   acc =substring_word(word,dict,acc)
 }
 acc
 end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
 
-substrings("Howdy partner, sit down! How's it going?", dictionary)
+p substrings("Howdy partner, sit down! How's it going?", dictionary)
 #{"how"=>2, "howdy"=>1, "part"=>1, "partner"=>1, "sit"=>1, "i"=>3, "it"=>2, "down"=>1, "own"=>1, "go"=>1, "going"=>1}
