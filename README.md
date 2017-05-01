@@ -9,7 +9,7 @@
 ``` 
    shif 5 
    text          :  abcdefghijklmnopqrstuvwxyz 
-   cipher return :  vwxyzabcdefghijklmnopqrstu 
+   cipher return :  fghijklmnopqrstuvwxyzabcde 
 ``` 
    [caesar_cipher( text , shift )](https://github.com/nxdf2015/odin-building-blocks/blob/master/cipher/lib/caesar_cipher.rb)
   params :
