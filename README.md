@@ -18,6 +18,7 @@
   
   return the modified string 
   
+  [spec](https://github.com/nxdf2015/odin-building-blocks/tree/master/cipher/spec)
   
   
 ### `Project 2:  Stock picker`
