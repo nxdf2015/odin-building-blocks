@@ -39,7 +39,7 @@ class Cipher
 end
 
 def caesar_cipher(text,shift)
-  
+
   cipher  = Cipher.new(shift)
   cipher.code_text(text)
 end
