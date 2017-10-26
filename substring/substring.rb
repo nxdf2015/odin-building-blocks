@@ -1,24 +1,13 @@
 
 
-def substring_word(word, dict = [] ,acc = {})
-  if word.length == 0
-    return acc
+def substrings(word,dictionnary)
+  word.downcase!
+  dictionnary.inject(Hash.new(0)) do |acc, word_dict|
+   c = word.scan(word_dict).size
+   acc[word_dict] += c  if c > 0
+   acc 
   end
-  words_in_dict =  (0..word.length).map {|i|
-    word[0..i]
-  } & dict
-  words_in_dict.each {|word|
-   acc[word] ||= 0
-   acc[word] += 1
-  }
-  return substring_word(word[1..-1],dict,acc)
-end
 
-def substrings(text ,dict = [] ,acc = {})
-  text.downcase.split(/\s+/).each {|word|
-   acc =substring_word(word,dict,acc)
-}
-acc
 end
 
 dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","own","part","partner","sit"]
