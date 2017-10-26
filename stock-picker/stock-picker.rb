@@ -1,19 +1,24 @@
 
 
-def stock_picker_value(prices  )
-  if prices.length == 2
-    return prices
+def stock_picker (values,pos = 0, max  = 0 ,id_min= 0 , id_max = 0 )
+  
+   if values.size == 1  
+    return [id_min,id_max]
+   end 
+   start = values.shift
+   m , id  = values
+         .zip((1..values.size+1))
+         .max_by do |x| x[0] end
+   
+   if (m - start) > max
+     max = m-start
+     id_min = pos
+     id_max = id + pos
+   end
+   
+   stock_picker(values,pos+1, max,id_min,id_max)
+  
   end
-  price_min = prices.shift
-  price_max = prices.max
-  value = stock_picker_value(prices)
-  return price_max - price_min < (value[1] - value[0]) ? value : [price_min,price_max]
-end
-
-def stock_picker(prices)
-  price_min,price_max = stock_picker_value(prices.clone)
-  [ prices.index(price_min) , prices.index(price_max)]
-end
 
 
 stock_picker([1,2,3]) #[0, 2]
